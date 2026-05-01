@@ -16,7 +16,7 @@ class DendeDatasetClear:
         return self.df
 
     def preprocess_transactions(self, df):
-        df = self._clearProducts(df)
+        df = self._clear_products(df)
         count = Counter()
         transactions = []
         stopwords = {
@@ -91,6 +91,9 @@ class DendeDatasetClear:
                 for transaction in transactions
             ]
         })
+
+        df_binarizado = transactions_df["transactions"].str.get_dummies(sep=";")
+        transactions_df = pd.concat([transactions_df["id_transacao"], df_binarizado], axis=1)
 
         transactions_df.to_csv(
             "transactions_cleaned.csv",

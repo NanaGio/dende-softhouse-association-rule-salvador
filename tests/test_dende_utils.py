@@ -9,7 +9,7 @@ from src.dende_utils import DendeDatasetClear
 
 class TestDendeDatasetClear(unittest.TestCase):
 
-    def set_up(self):
+    def setUp(self):
         # Carregamos o dataset real
         dataset_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'vendas_dataset.csv'))
         self.df = pd.read_csv(dataset_path)
@@ -26,7 +26,7 @@ class TestDendeDatasetClear(unittest.TestCase):
         print(self.df["descricao_produtos"].head(5).tolist())
         
         # Executa o método de limpeza
-        cleaned_df = self.cleaner._clearProducts(self.df)
+        cleaned_df = self.cleaner._clear_products(self.df)
         
         print("\nComo os primeiros 5 registros ficaram depois:")
         print(cleaned_df["descricao_produtos"].head(5).tolist())
@@ -45,7 +45,7 @@ class TestDendeDatasetClear(unittest.TestCase):
         sys.stdout = captured_output
         
         # Executa o método
-        self.cleaner.preprocessTransactions(self.df)
+        self.cleaner.preprocess_transactions(self.df)
         
         # Restaura a saída padrão do sistema
         sys.stdout = sys.__stdout__ 
