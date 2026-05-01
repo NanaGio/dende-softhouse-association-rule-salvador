@@ -6,7 +6,7 @@ class DendeDatasetClear:
     def __init__(self, df):
         self.df = df
 
-    def _clearProducts(self, df):
+    def _clear_products(self, df):
         df = self.df
         # o código abaixo remove os espaços em branco no início e no final da string, converte para minúsculas e remove caracteres especiais
         df["descricao_produtos"] = df["descricao_produtos"].str.strip().str.lower()
@@ -15,7 +15,7 @@ class DendeDatasetClear:
         self.df = df
         return self.df
 
-    def preprocessTransactions(self, df):
+    def preprocess_transactions(self, df):
         df = self._clearProducts(df)
         count = Counter()
         transactions = []

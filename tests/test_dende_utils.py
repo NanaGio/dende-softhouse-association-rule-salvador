@@ -9,7 +9,7 @@ from src.dende_utils import DendeDatasetClear
 
 class TestDendeDatasetClear(unittest.TestCase):
 
-    def setUp(self):
+    def set_up(self):
         # Carregamos o dataset real
         dataset_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'vendas_dataset.csv'))
         self.df = pd.read_csv(dataset_path)
