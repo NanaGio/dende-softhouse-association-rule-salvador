@@ -1,6 +1,6 @@
 import pandas as pd
 
-itemset = pd.read_csv('../transactions_cleaned.csv')
+
 
 class Apriori:
     def __init__(self, dataset):
