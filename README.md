@@ -46,7 +46,16 @@ Nesta etapa, os dados fornecidos representam transações de microempreendedores
 2. **Aplicar algoritmo de regras de associação**: Apriori, FP-Growth ou ECLAT.
 3. **Analisar resultados**: interpretar padrões frequentes e gerar insights para combos de produtos.
 
----
+ps:
+Como executar dende metrics.py
+
+Para garantir que o script consiga localizar os arquivos de dados (`.csv`) corretamente, **é necessário executar o comando a partir da pasta raiz** do projeto.
+
+No terminal, utilize o seguinte comando:
+
+```bash
+python src/dende_metrics.py
+--- 
 
 ## Referências
 
